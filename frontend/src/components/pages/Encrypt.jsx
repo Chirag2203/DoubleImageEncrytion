@@ -96,7 +96,7 @@ const Encrypt = () => {
         </div>
       <Button className=" mx-auto w-1/4 mt-12 bg-gradient-to-tr from-col4 to-col3  ">Encrypt</Button>
       </div>
-        
+          
     </div>
   );
 };
