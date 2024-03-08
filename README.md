@@ -30,13 +30,15 @@ This Python script demonstrates a method for encrypting and decrypting images us
 
 ## Installation
 ### To run the backend:
-``` cd backend
+``` 
+    cd backend
     .\venv\Scripts\activate
     python server.py
 ```
 
 ### To run the frontend:
-``` cd frontend
+``` 
+    cd frontend
     npm install
     npm run dev
 ```
