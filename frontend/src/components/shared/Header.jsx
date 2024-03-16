@@ -6,7 +6,6 @@ import { IoMdMenu as menu } from "react-icons/io";
 import { IoCloseSharp as close } from "react-icons/io5";
 import { SiFsecure } from "react-icons/si";
 
-import { FaBitcoin } from "react-icons/fa";
 
 const Header = () => {
   const [active, setActive] = useState("");
@@ -27,6 +26,14 @@ const Header = () => {
       title: "Decrypt",
       id: "decrypt",
     },
+    {
+      title:"Hiding",
+      id:"hiding"
+    },
+    {
+      title:"Unhiding",
+      id:"unhiding"
+    }
   ];
   
   //   for fixing the navbar after the user scrolls down

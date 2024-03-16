@@ -5,6 +5,8 @@ import Home from './components/pages/Home';
 import Footer from './components/shared/Footer';
 import Encrypt from './components/pages/Encrypt';
 import Decrypt from './components/pages/Decrypt';
+import Hiding from './components/pages/Hiding';
+import Unhiding from './components/pages/Unhiding';
 const App = () => {
   return (
     <div className=''>
@@ -14,6 +16,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/encrypt" element={<Encrypt />} />
           <Route path="/decrypt" element={<Decrypt />} />
+          <Route path="/hiding" element={<Hiding/>} />
+          <Route path='/unhiding' element={<Unhiding/>} />
         </Routes>
         <Footer/>
       </Router>
