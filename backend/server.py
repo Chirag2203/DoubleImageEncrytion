@@ -142,7 +142,7 @@ def encrypt():
         np.save('params/green.npy',green)
         np.save('params/red.npy',red)
         np.save('params/img.npy',encrypted_image)
-        print(encryption_params)
+        # print(encryption_params)
 
         # Save encrypted image
         encrypted_image_filename = "encrypted_image.png"
@@ -226,6 +226,9 @@ def decryptNow():
 
     return jsonify({'message': 'Image decrypted successfully'}), 200
 
+
+
+# Route to handle downloading the encrypted hidden image
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 import { IoMdMenu as menu } from "react-icons/io";
 import { IoCloseSharp as close } from "react-icons/io5";
 import { SiFsecure } from "react-icons/si";
-
 
 const Header = () => {
   const [active, setActive] = useState("");
@@ -27,15 +25,15 @@ const Header = () => {
       id: "decrypt",
     },
     {
-      title:"Hiding",
-      id:"hiding"
+      title: "Hiding",
+      id: "hiding",
     },
     {
-      title:"Unhiding",
-      id:"unhiding"
-    }
+      title: "Unhiding",
+      id: "unhiding",
+    },
   ];
-  
+
   //   for fixing the navbar after the user scrolls down
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +65,7 @@ const Header = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <SiFsecure className="text-white"/>
+          <SiFsecure className="text-white" />
           <p className="text-white text-lg font-bold cursor-pointer flex ">
             SecureT
           </p>
@@ -79,7 +77,7 @@ const Header = () => {
               key={nav.id}
               className={`${
                 active === nav.title ? "text-white" : "text-white"
-              } hover:text-purple-500 text-[18px] font-medium cursor-pointer`}
+              } hover:text-purple-500 text-sm uppercase font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
               <Link to={nav.id}>{nav.title}</Link>
@@ -104,7 +102,7 @@ const Header = () => {
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                  className={`font-poppins font-medium cursor-pointer text-sm ${
                     active === nav.title ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {
