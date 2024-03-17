@@ -8,9 +8,6 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import {
-  IoDownload,
-  IoDownloadSharp,
-  IoInformation,
   IoInformationCircle,
 } from "react-icons/io5";
 import { IoMdDownload } from "react-icons/io";
@@ -23,6 +20,7 @@ const Encrypt = () => {
   const [encryptionParams, setEncryptionParams] = useState(null);
   const [loading, setLoading] = useState(false);
   const [downloadLink, setDownloadLink] = useState("");
+  const [encryptionKey, setEncryptionKey]= useState("")
 
   const handlePublicImageChange = (e) => {
     setPublicImage(e.target.files[0]);
@@ -52,6 +50,7 @@ const Encrypt = () => {
       console.log(response);
       setMessage(response.data.message);
       setDownloadLink(response.data.encrypted_hidden_image_path);
+      setEncryptionKey(response.data.encryption_params.key)
 
       setEncryptionParams(response.data.encryption_params);
       setLoading(false);
@@ -155,13 +154,14 @@ const Encrypt = () => {
           </form>
           {message && <p className="mt-8">{message}</p>}
           {encryptionParams && (
-            <div className="flex flex-col gap-8 ">
+            <div className="flex flex-col gap-8 mt-4 ">
+              <p>Your Encryption key : {encryptionKey}</p>
               <div className="mt-4 flex gap-8">
                 <Button
                   onClick={handleDownloadParams}
                   className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-medium py-2 px-4 rounded"
                 >
-                  <IoMdDownload /> Download Encryption Key
+                  <IoMdDownload /> Download Params
                 </Button>
                 <Button
                   variant={"outline"}
@@ -171,6 +171,7 @@ const Encrypt = () => {
                   Download Image
                 </Button>
               </div>
+              <p>You can securely share this image now!</p>
               <img src={enc} alt="" />
             </div>
           )}
@@ -184,3 +185,4 @@ const Encrypt = () => {
 };
 
 export default Encrypt;
+// 613be84f2f9942b945eeb1c63a617665fc1e23d2a5f691519cc42d359612fc54

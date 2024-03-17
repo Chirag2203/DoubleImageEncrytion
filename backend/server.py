@@ -13,12 +13,6 @@ import json
 app = Flask(__name__)
 CORS(app, origins='http://localhost:5173') # This will enable CORS for all routes
 
-#gloabl variables
-global img_G, fx_G, fy_G, fz_G, Mk_e_G, blue_G, green_G, red_G
-
-
-    
-
 
 # Function to run hiding algorithmdef run_hiding_algo(path1, path2):
 def run_hiding_algo(path1, path2):
@@ -108,17 +102,6 @@ def encrypt():
         b, g, r = dna_decode(blue_scrambled, green_scrambled, red_scrambled)
         encrypted_image = recover_image(b, g, r, private_image_path)
         
-        #assign to global
-        img_G = encrypted_image
-        fx_G = fx
-        fy_G = fy   
-        fz_G = fz
-        Mk_e_G = Mk_e
-        blue_G = blue
-        green_G = green
-        red_G = red
-        
-
         # Prepare encryption parameters for response
         encryption_params = {
             'key': key,
@@ -134,6 +117,7 @@ def encrypt():
             'img': encrypted_image.tolist()
             
         }
+        np.save('params/key.npy',key)
         np.save('params/fx.npy',fx)
         np.save('params/fy.npy',fy)
         np.save('params/fz.npy',fz)
@@ -171,18 +155,6 @@ def encrypt():
 def perform_decryption(file_path, params):
     global img_G, fx_G, fy_G, fz_G, Mk_e_G, blue_G, green_G, red_G
     
-    # Extract encryption parameters from JSON object
-    # key = params['key']
-    # m = params['m']
-    # n = params['n']
-    # fx = params['fx']
-    # fy = params['fy']
-    # fz = params['fz']
-    # Mk_e = np.array(params['Mk'])
-    # blue = np.array(params['blue'])
-    # green = np.array(params['green'])
-    # red = np.array(params['red'])
-    # img = np.array(params['img'])
     fx=np.load('params/fx.npy')
     fy=np.load('params/fy.npy')
     fz=np.load('params/fz.npy')
@@ -194,8 +166,6 @@ def perform_decryption(file_path, params):
     # Perform decryption
     decrypt(img, fx, fy, fz, file_path, Mk_e, blue, green, red)
     
-    # Recover the hidden image from the public image using global variables
-    # decrypt(img_G, fx_G, fy_G, fz_G, file_path, Mk_e_G, blue_G, green_G, red_G)
     
     return "Success"
 
@@ -204,9 +174,17 @@ def decryptNow():
     if 'encrypted_image_input' not in request.files or 'encryption_params' not in request.files:
         return jsonify({'error': 'Missing files'}), 400
     
+    
+    
     # Get the encrypted image and encryption parameters
     encrypted_image = request.files['encrypted_image_input']
     encryption_params_file = request.files['encryption_params']
+    encryption_key_input= request.form['encryption_key']
+    
+    saved_key = np.load('params/key.npy')
+    
+    if saved_key!=encryption_key_input:
+        return jsonify({'error': 'Wrong enc key', 'message':'Wrong encryption key'}), 400
 
     # # decode the hidden image
     hidden_image = request.files['encrypted_image_input']

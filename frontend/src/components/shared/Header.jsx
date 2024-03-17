@@ -24,14 +24,14 @@ const Header = () => {
       title: "Decrypt",
       id: "decrypt",
     },
-    {
-      title: "Hiding",
-      id: "hiding",
-    },
-    {
-      title: "Unhiding",
-      id: "unhiding",
-    },
+    // {
+    //   title: "Hiding",
+    //   id: "hiding",
+    // },
+    // {
+    //   title: "Unhiding",
+    //   id: "unhiding",
+    // },
   ];
 
   //   for fixing the navbar after the user scrolls down
