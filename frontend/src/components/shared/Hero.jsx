@@ -4,7 +4,7 @@ import nitk from "../../assets/nitk.png";
 
 const Hero = () => {
   return (
-    <section className=" relative md:w-3/4 md:mx-auto mx-4  flex flex-col items-center pt-12  ">
+    <section className=" relative md:w-3/4 md:mx-auto mx-4  flex flex-col items-center pt-12  pb-4">
       <div className="py-16 text-5xl gap-4 font-extrabold flex flex-col items-center">
         <p className="text-gradient sm:text-6xl text-5xl pb-2  ">
           Secure - Image
@@ -38,7 +38,7 @@ const Hero = () => {
         <div className="flex flex-col gap-4  text-white justify-center items-center w-full">
           <p>BY</p>
           <p>Achyut Agarwal 211IT003</p>
-          <p>Chirag Agarwal 211IT018</p>
+          <p>Chirag Rajput 211IT018</p>
           <p>Siddharth Kelkar 211IT067</p>
         </div>
       </div>
