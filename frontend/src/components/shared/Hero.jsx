@@ -33,7 +33,7 @@ const Hero = () => {
       <div className="flex flex-col items-start mt-8 gap-4">
         <div className="flex items-center justify-center gap-2">
         <img src={nitk} alt="nitk" className="w-16 h-16" />
-        <p className="text-white text-xl font-medium">Developed in NITK</p>
+        <p className="text-white text-xl font-medium">Developed in Department of Information Technology, NITK Surathkal</p>
         </div>
         <div className="flex flex-col gap-4  text-white justify-center items-center w-full">
           <p>BY</p>
@@ -41,6 +41,7 @@ const Hero = () => {
           <p>Chirag Rajput 211IT018</p>
           <p>Siddharth Kelkar 211IT067</p>
         </div>
+        
       </div>
     </section>
   );
