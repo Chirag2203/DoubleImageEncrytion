@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import nitk from "../../assets/nitk.png";
 
 const Hero = () => {
   return (
     <section className=" relative md:w-3/4 md:mx-auto mx-4  flex flex-col items-center pt-12  ">
       <div className="py-16 text-5xl gap-4 font-extrabold flex flex-col items-center">
-        <p className="text-gradient sm:text-6xl text-5xl  ">
-          Secure <span className="sm:text-7xl  sm:-ml-4 ">T</span>
+        <p className="text-gradient sm:text-6xl text-5xl pb-2  ">
+          Secure - Image
         </p>
         <p className="font-semibold text-white text-center sm:text-5xl text-4xl">
           Share your images securely
         </p>
         <p className="text-lg text-col2 font-normal text-center w-3/4">
-          SecureT is a platform which helps you share your images securely by
-          using double image encryption and LSB steganography.
+          We use Double Image Encryption (Chaos Maps and DNA Encoding) and then perform LSB steganography to hide the encrypted image in another image.
         </p>
       </div>
       <div className="flex gap-4">
@@ -29,6 +29,18 @@ const Hero = () => {
         >
           Know more
         </Button></Link>
+      </div>
+      <div className="flex flex-col items-start mt-8 gap-4">
+        <div className="flex items-center justify-center gap-2">
+        <img src={nitk} alt="nitk" className="w-16 h-16" />
+        <p className="text-white text-xl font-medium">Developed in NITK</p>
+        </div>
+        <div className="flex flex-col gap-4  text-white justify-center items-center w-full">
+          <p>BY</p>
+          <p>Achyut Agarwal 211IT003</p>
+          <p>Chirag Agarwal 211IT018</p>
+          <p>Siddharth Kelkar 211IT067</p>
+        </div>
       </div>
     </section>
   );

@@ -65,9 +65,10 @@ const Header = () => {
             window.scrollTo(0, 0);
           }}
         >
+          
           <SiFsecure className="text-white" />
           <p className="text-white text-lg font-bold cursor-pointer flex ">
-            SecureT
+            Secure - Image
           </p>
         </Link>
 
