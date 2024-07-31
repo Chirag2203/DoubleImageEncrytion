@@ -1,6 +1,11 @@
 # Image Encryption using Chaotic Systems and DNA Encoding
 
 This Python script demonstrates a method for encrypting and decrypting images using chaotic systems, DNA encoding, and cryptographic techniques.
+Project for course IT352.
+## Team Members
+- ***Achyut Agarwal - 211IT003***
+- ***Chirag Rajput - 211IT018***
+- ***Siddharth Kelkar - 211IT067***
 
 ## Features
 
